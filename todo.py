@@ -1,5 +1,5 @@
 from bottle import route, run, template, redirect, request
-import sqlite3
+import sqlite3, os
 
 # データベースに接続
 dbname = "todo.db"
