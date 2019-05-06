@@ -19,15 +19,18 @@ def convert_txt_csv(filename, lines):
     header_columns.append("text")
     header_columns.append("title")
     header_columns.append("subtitle")
+    header_columns.append("penguin")
+    header_columns.append("panda")
+    header_columns.append("joushi")
     dict = {}
     for character in characters:
-        header_columns.append(character)
         dict[character] = "FALSE"
     f.write(",".join(header_columns) + "\n")
     
     #make 2nd~ line
     id = 0
     for line_index, line in enumerate(lines):
+        print(line_index)
         if line == "":
             continue
         else:
