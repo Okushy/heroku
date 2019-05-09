@@ -2,28 +2,17 @@
 <html lang="jp">
 <head>
   <meta charset="UTF-8">
-  <title>ToDoアプリ(Python3 + Bottle)</title>
+  <title>txt2csvアプリ(Python3 + Bottle)</title>
 </head>
 <body>
-  <h1>ToDoアプリ</h1>
-  <p>これはPython3とフレームワークBottleによって作ったToDoアプリです。</p>
+  <h1>txt→csvファイル変換アプリ</h1>
+  <p>これはtxtファイルをアップロードするとcsvファイルにしてくれるアプリです。</p>
 
-  <h2>ToDo 新規登録</h2>
-  <form name="todo" method="POST" action="/add">
-      <input type="text" name="todo_list" placeholder="ToDoを入力" required /><br/>
-      <input type="submit" value="追加" />
+  <h2>txtファイルをアップロードしてください</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="data" />
+    <input type="submit" value="upload">
   </form>
-
-  <h2>ToDo 一覧</h2>
-  <table border="1">
-  %for todo in todo_list:
-    <tr>
-      <td>{{todo["id"]}}</td>
-      <td>{{todo["todo"]}}</td>
-      <td><a href="/delete/{{todo['id']}}">削除</a></td>
-    </tr>
-  %end
-  </table>
 
 </body>
 </html>
